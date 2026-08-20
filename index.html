@@ -661,7 +661,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--g900
 /* ═══════════════════════════════════════════════════
    구글 시트 저장 연동 (Code.gs doPost: { action:"save", row:[...] })
 ═══════════════════════════════════════════════════ */
-const SCRIPT_URL = "/api/gas";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHJ0tT0NglsvAWE3eZZBm1Hd649fvM3aK68EIRoolMXwH0LZKKCybFbgzPXuj4z6r56A/exec";
 const LOGO_DATA_URI = "data:image/png;base64," +
   "iVBORw0KGgoAAAANSUhEUgAAAQ8AAACMCAYAAABifCz8AAAuh0lEQVR42u1dd5ycVbl+3pnZ3fRCKAFCSeiCICVIkXIFBKRcUYoKihcu7XoBG3KvYkdF5CKCKCKKBQvNCAIBaZFeAwEklBAIISGkkELa7s7Mc/8478m8e/LNzDezs7uT3fP+fvOb3Zlvvu+U97zneesBIkWKFKkOkjgEjSGSAiBjxrQgIowjEylSpEqCI1tBoESKFJFHpKoCZDcAewIggD+LyGKSEhFIpEiR1kIWJLMkzyX5ArvSSyTHkcyQzMTRihQpUhdVheQFRmAUSXaSXK3/31BJrYkUKdLARByiqOIlknkVGlaIFFSIbKa/iegjUr+iyNB1ktoxMgBaAGSDsRQ4u0cbgEPj" +
   "WEeKwiPSGsFBMiMieQAvq6AIjaL+/0OC/yNFisIjjh0A4FaDNJK+35VkTkQK0XUbKVKkNTEcJDcm+Z7aOYqB3YNq99hcr43COlJEHv1QGGRI5vRVdVxUdcmKyNsA/q7oo2AvQcnuMc58FilSFB79SXCISFFE8voqavxG2sV+eZnxLOr7hv1NeBiPUxSIA5RyUXA4wUFyPICPAegEcJ+IvGi/L4M+Cvr9YyTvgvOsFOC8L0DJDjJsXR4fIxQJoCgiDKNmg9yeNdfFJRap3woOfd+F5AJjr2gn+WOSrfp9tsI9fLDY7hrbkTf2jk79+yS9JrcOjU1F5KXqXWslFU/vEQPk+inJABYcov0fDmAqgAkAOnT39Iv8EQAnisgb6jHJl1skikJ+AeBMRS8t" +
@@ -708,7 +708,7 @@ document.querySelectorAll(".app-logo-target").forEach(img=>{ img.src = LOGO_DATA
 async function callBackend(payload){
   const res = await fetch(SCRIPT_URL, {
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
     body: JSON.stringify(payload)
   });
   return res.json();
@@ -748,20 +748,10 @@ const CONSULTANTS = [
   { region:"북부", name:"장은희", password:"97" },
   { region:"북부", name:"조예희", password:"39" },
   { region:"북부", name:"천진영", password:"16" },
-  { region:"남부", name:"김인곤", password:"92" },
-  { region:"남부", name:"김재엽", password:"73" },
-  { region:"남부", name:"나숙자", password:"38" },
-  { region:"남부", name:"신경숙", password:"32" },
-  { region:"남부", name:"안주연", password:"72" },
-  { region:"남부", name:"유현", password:"15" },
-  { region:"남부", name:"유환석", password:"7" },
-  { region:"남부", name:"이종혁", password:"15" },
-  { region:"남부", name:"이호진", password:"76" },
-  { region:"남부", name:"이희숙", password:"77" },
-  { region:"남부", name:"전혜경", password:"11" },
-  { region:"남부", name:"정옥주", password:"56" },
-  { region:"남부", name:"최석규", password:"65" },
-  { region:"남부", name:"최유정", password:"49" },
+  { region:"남부", name:"안미경", password:"23" },
+  { region:"남부", name:"유창석", password:"36" },
+  { region:"남부", name:"정한열", password:"86" },
+  { region:"남부", name:"최윤정", password:"92" },
 ];
 
 let selectedConsultant = null;
