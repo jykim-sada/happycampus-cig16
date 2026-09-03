@@ -471,7 +471,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--g900
       <div class="form-group"><label>성별 <span class="req">*</span></label><div class="select-wrap"><select id="f-gender"><option value="">선택하세요</option><option>남성</option><option>여성</option></select></div></div>
       <div class="form-group"><label>활동 상태 <span class="req">*</span></label><div class="select-wrap"><select id="f-status"><option value="">선택하세요</option><option>재직</option><option>퇴직예정</option><option>퇴직</option><option>구직준비</option></select></div></div>
       <div class="form-group"><label>휴대전화번호 <span class="req">*</span></label><input type="tel" id="f-phone" placeholder="010-0000-0000" inputmode="numeric" maxlength="13"/></div>
-      <div class="form-group full"><label>교육과정(행사)명 <span class="req">*</span></label><input type="text" id="f-course" placeholder="예) 2025 중장년 진로설계 과정"/></div>
+      <div class="form-group full"><label>참여 캠퍼스 <span class="req">*</span></label><div class="select-wrap"><select id="f-course"><option value="">선택하세요</option><option>남부 행복캠퍼스 (수원)</option><option>북부 행복캠퍼스 (고양)</option><option>양주 행복캠퍼스 (양주)</option><option>화성 행복캠퍼스 (화성)</option><option>군포 행복캠퍼스 (군포)</option><option>안성 행복캠퍼스 (안성)</option><option>시흥 행복캠퍼스 (시흥)</option></select></div></div>
     </div>
   </div>
 
@@ -1836,7 +1836,7 @@ async function handleSubmit() {
     renderResult({name,age,gender,status,course}, code, ti, sc, pct, result);
 
     // ── 구글 시트에 결과 자동 저장 ──
-    // 컬럼 순서: 시간 / 이름 / 나이 / 성별 / 활동상태 / 교육과정 / 휴대전화번호 / Q1~Q36(문항별 응답 1~4) / 희망방향 / 강점역량 / 유형코드 / 유형명
+    // 컬럼 순서: 시간 / 이름 / 나이 / 성별 / 활동상태 / 참여캠퍼스 / 휴대전화번호 / Q1~Q36(문항별 응답 1~4) / 희망방향 / 강점역량 / 유형코드 / 유형명
     const row = [
       new Date().toLocaleString('ko-KR'), name, age, gender, status, course, phone,
       ...rawAnswers,
